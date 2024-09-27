@@ -13,9 +13,9 @@ import work.javiermantilla.franquicia.infrastructure.database.entity.FranquiciaE
 import work.javiermantilla.franquicia.infrastructure.database.repository.FranquiciaRepository;
 
 
-@AdapterComponent
+@AdapterComponent("jpa")
 @RequiredArgsConstructor
-public class FranquiciaAdapterRepository implements FranquiciaRepositoryPortOut{
+public class FranquiciaRepositoryAdapter implements FranquiciaRepositoryPortOut{
 
 	private final FranquiciaRepository franquiciaRepository;
 	
@@ -27,7 +27,8 @@ public class FranquiciaAdapterRepository implements FranquiciaRepositoryPortOut{
 
 	@Override
 	public Franquicia save(Franquicia franquicia) {
-		FranquiciaEntity franquiciaEntity= this.franquiciaRepository.save(GenericMapper.map(franquicia,FranquiciaEntity.class));
+		FranquiciaEntity franquiciaEntity= this.franquiciaRepository
+				.save(GenericMapper.map(franquicia,FranquiciaEntity.class));
 		return GenericMapper.map(franquiciaEntity, Franquicia.class);
 	}
 

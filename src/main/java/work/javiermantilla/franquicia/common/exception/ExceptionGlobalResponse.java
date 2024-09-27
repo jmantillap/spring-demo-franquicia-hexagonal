@@ -68,8 +68,7 @@ public class ExceptionGlobalResponse {
 	}
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	protected ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-		//log.error(ex.getMessage(), ex);
+	protected ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {		
 		List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors().stream().toList();		
 		result = new GenericResponseDTO(this.getErrorsMap(fieldErrors), false,
 				FranquiciaConstants.MENSAJE_ERROR_VALIDACION_CAMPOS,

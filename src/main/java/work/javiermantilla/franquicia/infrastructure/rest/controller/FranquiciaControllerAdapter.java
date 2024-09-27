@@ -26,7 +26,7 @@ import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @Log4j2
-public class AdapterFranquiciaController {
+public class FranquiciaControllerAdapter {
 
 	private final FranquiciaUseCasePortIn franquiciaUseCasePortIn;
 	private GenericResponseDTO genericResponse;
