@@ -1,41 +1,29 @@
 package work.javiermantilla.franquicia.infrastructure.nosql.adapter;
 
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.context.annotation.Primary;
 
 import lombok.RequiredArgsConstructor;
-import work.javiermantilla.franquicia.aplication.ports.FranquiciaRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
+import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
-import work.javiermantilla.franquicia.domain.model.Franquicia;
+
+import work.javiermantilla.franquicia.domain.model.Producto;
 import work.javiermantilla.franquicia.infrastructure.nosql.repository.MongoRepositoryJPA;
 
 
+
 @RequiredArgsConstructor
-public class MongoDBAdapter implements FranquiciaRepositoryPortOut {
+@AdapterComponent
+public class MongoDBAdapter implements ProductoRepositoryPortOut {
 	
-	private final MongoRepositoryJPA mongo;
+	private MongoRepositoryJPA mongo;
 
 	@Override
-	public List<Franquicia> findAll() {				
-		return GenericMapper.mapList(mongo.getAllMongo(), Franquicia.class);
+	public List<Producto> findAll() {				
+		return GenericMapper.mapList(mongo.getAllMongo(), Producto.class);
 	}
 
-	@Override
-	public Franquicia save(Franquicia franquicia) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<Franquicia> findById(Integer id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
-	}
-
-	@Override
-	public Franquicia getNombreRepetido(Integer id, String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

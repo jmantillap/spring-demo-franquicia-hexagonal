@@ -2,6 +2,9 @@ package work.javiermantilla.franquicia.infrastructure.database.adapter;
 
 import java.util.List;
 
+
+import org.springframework.context.annotation.Primary;
+
 import lombok.RequiredArgsConstructor;
 import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
@@ -12,6 +15,7 @@ import work.javiermantilla.franquicia.infrastructure.database.repository.Product
 
 @RequiredArgsConstructor
 @AdapterComponent
+@Primary
 public class ProductoRepositoryAdapter implements ProductoRepositoryPortOut {
 	
 	private final ProductoRepository productoRepository;

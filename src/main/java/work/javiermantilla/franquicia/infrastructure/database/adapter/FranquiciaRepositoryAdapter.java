@@ -3,6 +3,8 @@ package work.javiermantilla.franquicia.infrastructure.database.adapter;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import lombok.RequiredArgsConstructor;
 
 import work.javiermantilla.franquicia.aplication.ports.FranquiciaRepositoryPortOut;
@@ -13,8 +15,9 @@ import work.javiermantilla.franquicia.infrastructure.database.entity.FranquiciaE
 import work.javiermantilla.franquicia.infrastructure.database.repository.FranquiciaRepository;
 
 
-@AdapterComponent("jpa")
+@AdapterComponent
 @RequiredArgsConstructor
+@Qualifier("jpa")
 public class FranquiciaRepositoryAdapter implements FranquiciaRepositoryPortOut{
 
 	private final FranquiciaRepository franquiciaRepository;
