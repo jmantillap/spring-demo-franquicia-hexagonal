@@ -26,16 +26,16 @@ import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @Log4j2
-public class FranquiciaController {
+public class AdapterFranquiciaController {
 
-	private final FranquiciaUseCasePortIn franquiciaUseCasePort;
+	private final FranquiciaUseCasePortIn franquiciaUseCasePortIn;
 	private GenericResponseDTO genericResponse;
 
 	@PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> crearFranquicia(@Valid @RequestBody FranquiciaRequestDTO franquiciaDTO) {
 
 		log.info("Inicio la franquicia a crear : {}", franquiciaDTO);
-		genericResponse = new GenericResponseDTO(this.franquiciaUseCasePort.crearFranquicia(franquiciaDTO), true,
+		genericResponse = new GenericResponseDTO(this.franquiciaUseCasePortIn.crearFranquicia(franquiciaDTO), true,
 				FranquiciaConstants.RESPONSE_CREATED, HttpStatus.OK, FranquiciaConstants.TITTLE_CREATED);
 		return new ResponseEntity<>(genericResponse, HttpStatus.CREATED);
 	}
@@ -45,7 +45,7 @@ public class FranquiciaController {
 
 		log.info("Consulta de lista de franquicias ");
 		genericResponse = new GenericResponseDTO(
-				this.franquiciaUseCasePort.getFranquicias(), 
+				this.franquiciaUseCasePortIn.getFranquicias(), 
 				true,
 				FranquiciaConstants.RESPONSE_FIND, 
 				HttpStatus.OK, 
@@ -59,7 +59,7 @@ public class FranquiciaController {
 		
 		log.info("Se actualiza el nombre de la franquicia");
 		genericResponse = new GenericResponseDTO(
-				this.franquiciaUseCasePort.updateFranquicia(id,franquiciaUpdateDTO), 
+				this.franquiciaUseCasePortIn.updateFranquicia(id,franquiciaUpdateDTO), 
 				true,
 				FranquiciaConstants.RESPONSE_UPDATE, 
 				HttpStatus.OK, 
