@@ -2,8 +2,6 @@ package work.javiermantilla.franquicia.infrastructure.nosql.adapter;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
-
 import lombok.RequiredArgsConstructor;
 import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
