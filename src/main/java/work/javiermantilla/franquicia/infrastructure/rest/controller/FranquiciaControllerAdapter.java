@@ -17,9 +17,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
 import work.javiermantilla.franquicia.common.util.FranquiciaConstants;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaUpdateRequestDTO;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaUpdateRequestDTO;
 
 @RestController
 @RequestMapping("/api/v1/franquicia")

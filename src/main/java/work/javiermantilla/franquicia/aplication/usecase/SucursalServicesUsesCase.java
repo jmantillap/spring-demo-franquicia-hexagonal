@@ -15,8 +15,8 @@ import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalUpdateRequestDTO;
 
 @UseCase
 @RequiredArgsConstructor

@@ -3,8 +3,8 @@ package work.javiermantilla.franquicia.aplication.ports.usecase;
 import java.util.List;
 
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalUpdateRequestDTO;
 
 
 public interface SucursalUseCasePortIn {

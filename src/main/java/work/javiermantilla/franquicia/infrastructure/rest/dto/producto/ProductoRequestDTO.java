@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.infrastructure.rest.dto;
+package work.javiermantilla.franquicia.infrastructure.rest.dto.producto;
 
 import java.io.Serializable;
 
@@ -11,6 +11,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
 
 @Data
 @AllArgsConstructor

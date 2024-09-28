@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.infrastructure.rest.dto;
+package work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal;
 
 import java.io.Serializable;
 

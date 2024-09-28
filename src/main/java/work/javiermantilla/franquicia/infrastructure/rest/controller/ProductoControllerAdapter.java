@@ -19,9 +19,9 @@ import lombok.extern.log4j.Log4j2;
 import work.javiermantilla.franquicia.aplication.ports.usecase.ProductoUseCasePortIn;
 import work.javiermantilla.franquicia.common.util.FranquiciaConstants;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoStockRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoStockRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoUpdateRequestDTO;
 
 
 @RestController

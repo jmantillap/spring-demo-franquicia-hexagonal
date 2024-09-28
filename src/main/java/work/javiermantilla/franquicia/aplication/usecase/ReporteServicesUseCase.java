@@ -12,11 +12,11 @@ import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoReporteStock;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoReporteStock.SucursalProducto;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoReporteStock;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoReporteStock.SucursalProducto;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
 
 @UseCase
 @RequiredArgsConstructor

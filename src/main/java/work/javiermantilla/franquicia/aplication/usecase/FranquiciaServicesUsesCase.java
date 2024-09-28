@@ -14,8 +14,8 @@ import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCase
 import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaUpdateRequestDTO;
 
 
 @Log4j2

@@ -15,9 +15,9 @@ import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Producto;
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoStockRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoStockRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoUpdateRequestDTO;
 
 @RequiredArgsConstructor
 @UseCase

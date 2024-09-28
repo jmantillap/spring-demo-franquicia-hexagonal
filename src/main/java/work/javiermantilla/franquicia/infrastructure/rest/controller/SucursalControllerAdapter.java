@@ -18,8 +18,8 @@ import lombok.extern.log4j.Log4j2;
 import work.javiermantilla.franquicia.aplication.ports.usecase.SucursalUseCasePortIn;
 import work.javiermantilla.franquicia.common.util.FranquiciaConstants;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.SucursalUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalUpdateRequestDTO;
 
 @RestController
 @RequestMapping("/api/v1/sucursal")
