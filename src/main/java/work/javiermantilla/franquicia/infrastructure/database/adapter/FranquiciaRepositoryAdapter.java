@@ -6,8 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import lombok.RequiredArgsConstructor;
-
-import work.javiermantilla.franquicia.aplication.ports.FranquiciaRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.db.FranquiciaRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;

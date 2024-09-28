@@ -4,10 +4,13 @@ import java.util.List;
 
 
 import lombok.RequiredArgsConstructor;
-import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.ProductoUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.db.SucursalRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.usecase.ProductoUseCasePortIn;
 import work.javiermantilla.franquicia.common.annotation.UseCase;
+import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Producto;
+import work.javiermantilla.franquicia.domain.model.Sucursal;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoRequestDTO;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoStockRequestDTO;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoUpdateRequestDTO;
@@ -15,14 +18,21 @@ import work.javiermantilla.franquicia.infrastructure.rest.dto.ProductoUpdateRequ
 @RequiredArgsConstructor
 @UseCase
 public class ProductoServicesUseCase implements ProductoUseCasePortIn {
-
 		
 	private final ProductoRepositoryPortOut productoRepositoryPortOut;
+	private final SucursalRepositoryPortOut sucursalRepositoryPortOut;
+
 	
 	@Override
-	public Producto crearProducto(ProductoRequestDTO productoDTO) {
+	public Producto crearProducto(ProductoRequestDTO productoDTO) {		
+		Sucursal  sucursal = this.sucursalRepositoryPortOut
+							.getSucursalById(productoDTO.getIdSucursal());
 		
-		return null;
+		Producto  producto = GenericMapper.map(productoDTO, Producto.class);		
+		producto.setSucursal(sucursal);
+		producto = this.productoRepositoryPortOut.save(producto);		
+		producto.setSucursal(sucursal);		
+		return producto;
 	}
 
 	@Override

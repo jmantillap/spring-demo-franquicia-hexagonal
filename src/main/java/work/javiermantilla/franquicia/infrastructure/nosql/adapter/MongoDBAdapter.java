@@ -3,7 +3,7 @@ package work.javiermantilla.franquicia.infrastructure.nosql.adapter;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
-import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 
@@ -21,6 +21,12 @@ public class MongoDBAdapter implements ProductoRepositoryPortOut {
 	@Override
 	public List<Producto> findAll() {				
 		return GenericMapper.mapList(mongo.getAllMongo(), Producto.class);
+	}
+
+	@Override
+	public Producto save(Producto producto) {
+		
+		return null;
 	}
 
 

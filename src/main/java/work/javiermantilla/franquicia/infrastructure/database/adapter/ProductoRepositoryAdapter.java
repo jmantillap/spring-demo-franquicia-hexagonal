@@ -2,11 +2,10 @@ package work.javiermantilla.franquicia.infrastructure.database.adapter;
 
 import java.util.List;
 
-
 import org.springframework.context.annotation.Primary;
 
 import lombok.RequiredArgsConstructor;
-import work.javiermantilla.franquicia.aplication.ports.ProductoRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Producto;
@@ -17,13 +16,21 @@ import work.javiermantilla.franquicia.infrastructure.database.repository.Product
 @AdapterComponent
 @Primary
 public class ProductoRepositoryAdapter implements ProductoRepositoryPortOut {
-	
+
 	private final ProductoRepository productoRepository;
-	
+
 	@Override
-	public List<Producto> findAll() {		
-		List<ProductoEntity> list= this.productoRepository.findAll();		
-		return GenericMapper.mapList(list,Producto.class);
+	public List<Producto> findAll() {
+		List<ProductoEntity> list = this.productoRepository.findAll();
+		return GenericMapper.mapList(list, Producto.class);
+	}
+
+	@Override
+	public Producto save(Producto producto) {
+
+		ProductoEntity productoSave = this.productoRepository
+				.save(GenericMapper.map(producto, ProductoEntity.class));
+		return GenericMapper.map(productoSave, Producto.class);
 	}
 
 }

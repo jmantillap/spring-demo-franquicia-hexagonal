@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import work.javiermantilla.franquicia.aplication.ports.FranquiciaUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
 import work.javiermantilla.franquicia.common.util.FranquiciaConstants;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaRequestDTO;
 import work.javiermantilla.franquicia.infrastructure.rest.dto.FranquiciaUpdateRequestDTO;

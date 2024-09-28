@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.aplication.ports;
+package work.javiermantilla.franquicia.aplication.ports.db;
 
 import java.util.List;
 import java.util.Optional;

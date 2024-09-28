@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.aplication.ports;
+package work.javiermantilla.franquicia.aplication.ports.usecase;
 
 import java.util.List;
 

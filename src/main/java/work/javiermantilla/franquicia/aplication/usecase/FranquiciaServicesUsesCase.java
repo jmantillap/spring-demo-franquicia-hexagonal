@@ -9,8 +9,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import work.javiermantilla.franquicia.aplication.ports.FranquiciaRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.FranquiciaUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.db.FranquiciaRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
 import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
