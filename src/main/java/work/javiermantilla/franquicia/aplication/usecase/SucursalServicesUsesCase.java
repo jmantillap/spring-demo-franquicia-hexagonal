@@ -8,15 +8,15 @@ import org.springframework.web.server.ResponseStatusException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import work.javiermantilla.franquicia.aplication.ports.db.SucursalRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
-import work.javiermantilla.franquicia.aplication.ports.usecase.SucursalUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.FranquiciaUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.SucursalUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.out.SucursalRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.sucursal.SucursalRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.sucursal.SucursalUpdateRequestDTO;
 
 @UseCase
 @RequiredArgsConstructor

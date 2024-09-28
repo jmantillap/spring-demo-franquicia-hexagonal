@@ -8,16 +8,16 @@ import org.springframework.web.server.ResponseStatusException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.db.SucursalRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.usecase.ProductoUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.ProductoUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.out.ProductoRepositoryPortOut;
+import work.javiermantilla.franquicia.aplication.ports.out.SucursalRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Producto;
 import work.javiermantilla.franquicia.domain.model.Sucursal;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoStockRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.producto.ProductoUpdateRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.producto.ProductoRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.producto.ProductoStockRequestDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.producto.ProductoUpdateRequestDTO;
 
 @RequiredArgsConstructor
 @UseCase

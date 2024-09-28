@@ -19,7 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import jakarta.validation.ValidationException;
 import lombok.extern.log4j.Log4j2;
 import work.javiermantilla.franquicia.common.util.FranquiciaConstants;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.GenericResponseDTO;
+import work.javiermantilla.franquicia.infrastructure.adapter.in.rest.dto.GenericResponseDTO;
 
 @ControllerAdvice
 @Log4j2

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.RequiredArgsConstructor;
-import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
-import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
-import work.javiermantilla.franquicia.aplication.ports.usecase.ReporteServicesUseCasePortIn;
-import work.javiermantilla.franquicia.aplication.ports.usecase.SucursalUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.FranquiciaUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.ReporteServicesUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.in.SucursalUseCasePortIn;
+import work.javiermantilla.franquicia.aplication.ports.out.ProductoRepositoryPortOut;
 import work.javiermantilla.franquicia.common.annotation.UseCase;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 import work.javiermantilla.franquicia.domain.model.Franquicia;
