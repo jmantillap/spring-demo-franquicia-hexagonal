@@ -1,6 +1,7 @@
 package work.javiermantilla.franquicia.infrastructure.nosql.adapter;
 
 import java.util.List;
+import java.util.Optional;
 
 import lombok.RequiredArgsConstructor;
 import work.javiermantilla.franquicia.aplication.ports.db.ProductoRepositoryPortOut;
@@ -27,6 +28,11 @@ public class MongoDBAdapter implements ProductoRepositoryPortOut {
 	public Producto save(Producto producto) {
 		
 		return null;
+	}
+
+	@Override
+	public Optional<Producto> findById(Integer id) {		
+		return Optional.empty();
 	}
 
 

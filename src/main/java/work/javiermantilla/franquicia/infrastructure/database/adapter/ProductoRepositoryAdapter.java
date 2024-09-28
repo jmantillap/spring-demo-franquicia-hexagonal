@@ -1,6 +1,7 @@
 package work.javiermantilla.franquicia.infrastructure.database.adapter;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 
@@ -31,6 +32,13 @@ public class ProductoRepositoryAdapter implements ProductoRepositoryPortOut {
 		ProductoEntity productoSave = this.productoRepository
 				.save(GenericMapper.map(producto, ProductoEntity.class));
 		return GenericMapper.map(productoSave, Producto.class);
+	}
+
+	@Override
+	public Optional<Producto> findById(Integer id) {		
+		Optional<ProductoEntity> oProducto = this.productoRepository.findById(id);				
+		return oProducto.isEmpty() ? Optional.empty()
+				: Optional.of(GenericMapper.map(oProducto.get(), Producto.class));
 	}
 
 }
