@@ -1,10 +1,13 @@
 package work.javiermantilla.franquicia.aplication.usecase;
 
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-
 import work.javiermantilla.franquicia.aplication.ports.db.SucursalRepositoryPortOut;
 import work.javiermantilla.franquicia.aplication.ports.usecase.FranquiciaUseCasePortIn;
 import work.javiermantilla.franquicia.aplication.ports.usecase.SucursalUseCasePortIn;
@@ -27,8 +30,7 @@ public class SucursalServicesUsesCase implements SucursalUseCasePortIn {
 	public Sucursal crearSucursal(SucursalRequestDTO sucursalDTO) {
 	
 		Franquicia franquicia = this.franquiciaUseCasePortIn
-				.getFranquiciaById(sucursalDTO.getIdFranquicia());
-		
+				.getFranquiciaById(sucursalDTO.getIdFranquicia());		
 		Sucursal sucursal= GenericMapper.map(sucursalDTO,Sucursal.class);
 		sucursal.setFranquicia(franquicia);
 		sucursal = this.sucursalRepositoryPortOut.save(sucursal);
@@ -38,24 +40,32 @@ public class SucursalServicesUsesCase implements SucursalUseCasePortIn {
 
 	@Override
 	public List<Sucursal> getSucursales() {
-		
-		return null;
-	}
-
-	@Override
-	public Sucursal updateSucursal(Integer id, SucursalUpdateRequestDTO dto) {
-		
-		return null;
+		return sucursalRepositoryPortOut.getSucursales();
 	}
 
 	@Override
 	public Sucursal getSucursalById(Integer id) {
 		return this.sucursalRepositoryPortOut.getSucursalById(id);
 	}
+	
+	@Override
+	public Sucursal updateSucursal(Integer id, SucursalUpdateRequestDTO dto) {
+		
+		Optional<Sucursal> oSucursal = this.sucursalRepositoryPortOut.findById(id);
+		if(!oSucursal.isPresent()) {
+			log.error("La sucursal con id: {}, no existe.",id);
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"La Sucursal no existe");
+		}		
+		oSucursal.get().setNombre(dto.getNombre());		
+		return this.sucursalRepositoryPortOut.save(oSucursal.get());
+	}
+
+	
 
 	@Override
 	public List<Sucursal> getSucursalesByIdFranquicia(Integer idFranquicia) {
 		
+		//return this.SucursalRepositoryPortOut.findByIdFranquicia(idFranquicia);
 		return null;
 	}
 
