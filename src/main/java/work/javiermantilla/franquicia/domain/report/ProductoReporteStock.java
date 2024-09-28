@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.infrastructure.rest.dto.producto;
+package work.javiermantilla.franquicia.domain.report;
 
 import java.util.List;
 
@@ -6,23 +6,24 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.franquicia.FranquiciaRequestDTO;
-import work.javiermantilla.franquicia.infrastructure.rest.dto.sucursal.SucursalRequestDTO;
+import work.javiermantilla.franquicia.domain.model.Franquicia;
+import work.javiermantilla.franquicia.domain.model.Producto;
+import work.javiermantilla.franquicia.domain.model.Sucursal;
 
 @Data
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductoReporteStock {
 	
-	private FranquiciaRequestDTO franquicia;
+	private Franquicia franquicia;
 	private List<SucursalProducto> sucursales;
 	
 	@Data
 	@AllArgsConstructor
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class SucursalProducto{
-		private SucursalRequestDTO sucursal;
-		private List<ProductoRequestDTO> productoXSucursal;
+		private Sucursal sucursal;
+		private List<Producto> productoXSucursal;
 	}
 
 }

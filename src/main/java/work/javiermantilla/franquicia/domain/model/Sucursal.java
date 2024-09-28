@@ -16,5 +16,11 @@ public class Sucursal implements Serializable {
 	private Integer id;
 	private Franquicia franquicia;	
 	private String nombre;
+	public Sucursal(Integer id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
 
+	
 }

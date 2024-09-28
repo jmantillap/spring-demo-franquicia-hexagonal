@@ -17,5 +17,12 @@ public class Producto implements Serializable {
 	private Sucursal sucursal;
 	private String nombre;
 	private Integer stock;
+	public Producto(String nombre, Integer stock) {
+		super();
+		this.nombre = nombre;
+		this.stock = stock;
+	}
+	
+	
 	
 }
