@@ -34,4 +34,11 @@ public class SucursalRepositoryAdapter implements SucursalRepositoryPortOut {
 		
 	}
 
+
+	@Override
+	public Sucursal save(Sucursal sucursal) {		
+		SucursalEntity sucursalSave= this.sucursalRepository.save(GenericMapper.map(sucursal,SucursalEntity.class));		
+		return GenericMapper.map(sucursalSave, Sucursal.class);
+	}
+
 }
