@@ -1,4 +1,4 @@
-package work.javiermantilla.franquicia.infrastructure.nosql.adapter;
+package work.javiermantilla.franquicia.infrastructure.mongo.adapter;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +9,7 @@ import work.javiermantilla.franquicia.common.annotation.AdapterComponent;
 import work.javiermantilla.franquicia.common.util.GenericMapper;
 
 import work.javiermantilla.franquicia.domain.model.Producto;
-import work.javiermantilla.franquicia.infrastructure.nosql.repository.MongoRepositoryJPA;
+import work.javiermantilla.franquicia.infrastructure.mongo.repository.MongoRepositoryJPA;
 
 
 
@@ -37,6 +37,12 @@ public class MongoDBAdapter implements ProductoRepositoryPortOut {
 
 	@Override
 	public Boolean delete(Producto producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Object[]> getProductosMaxStockSucursal(Integer idSucursal) {
 		// TODO Auto-generated method stub
 		return null;
 	}

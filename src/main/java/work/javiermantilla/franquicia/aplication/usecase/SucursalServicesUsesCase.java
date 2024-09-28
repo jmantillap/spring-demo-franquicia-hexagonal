@@ -63,10 +63,9 @@ public class SucursalServicesUsesCase implements SucursalUseCasePortIn {
 	
 
 	@Override
-	public List<Sucursal> getSucursalesByIdFranquicia(Integer idFranquicia) {
+	public List<Sucursal> getSucursalesByIdFranquicia(Integer idFranquicia) {		
+	    return this.sucursalRepositoryPortOut.findByIdFranquicia(idFranquicia);
 		
-		//return this.SucursalRepositoryPortOut.findByIdFranquicia(idFranquicia);
-		return null;
 	}
 
 }

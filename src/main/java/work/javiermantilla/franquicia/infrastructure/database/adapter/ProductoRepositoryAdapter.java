@@ -47,4 +47,9 @@ public class ProductoRepositoryAdapter implements ProductoRepositoryPortOut {
 		return true;
 	}
 
+	@Override
+	public List<Object[]> getProductosMaxStockSucursal(Integer idSucursal) {
+		return this.productoRepository.getProductosMaxStockSucursal(idSucursal);
+	}
+
 }
