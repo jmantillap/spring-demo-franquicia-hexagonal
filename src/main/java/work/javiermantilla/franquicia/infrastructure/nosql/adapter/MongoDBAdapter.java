@@ -35,5 +35,11 @@ public class MongoDBAdapter implements ProductoRepositoryPortOut {
 		return Optional.empty();
 	}
 
+	@Override
+	public Boolean delete(Producto producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

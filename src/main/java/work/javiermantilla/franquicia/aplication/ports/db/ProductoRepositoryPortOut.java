@@ -8,6 +8,6 @@ import work.javiermantilla.franquicia.domain.model.Producto;
 public interface ProductoRepositoryPortOut {
 	List<Producto> findAll();
 	Producto save(Producto producto);	
-	Optional<Producto>  findById(Integer id);
-	
+	Optional<Producto> findById(Integer id);
+	Boolean delete(Producto producto);
 }

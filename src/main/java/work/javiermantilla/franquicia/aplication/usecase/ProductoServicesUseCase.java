@@ -51,14 +51,17 @@ public class ProductoServicesUseCase implements ProductoUseCasePortIn {
 
 	@Override
 	public Boolean eliminarProducto(Integer id) {
-
+		Producto producto= this.getProductoById(id);
+		this.productoRepositoryPortOut.delete(producto);
 		return true;
 	}
 
 	@Override
 	public Producto updateStock(Integer id, ProductoStockRequestDTO dto) {
-
-		return null;
+		Producto producto= this.getProductoById(id);
+		producto.setStock(dto.getStock());
+		producto= this.productoRepositoryPortOut.save(producto);
+		return producto;
 	}
 	
 	private Producto getProductoById(Integer idProducto){

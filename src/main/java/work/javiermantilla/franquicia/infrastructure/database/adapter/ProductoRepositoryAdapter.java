@@ -41,4 +41,10 @@ public class ProductoRepositoryAdapter implements ProductoRepositoryPortOut {
 				: Optional.of(GenericMapper.map(oProducto.get(), Producto.class));
 	}
 
+	@Override
+	public Boolean delete(Producto producto) {
+		this.productoRepository.delete(GenericMapper.map(producto,ProductoEntity.class));
+		return true;
+	}
+
 }
