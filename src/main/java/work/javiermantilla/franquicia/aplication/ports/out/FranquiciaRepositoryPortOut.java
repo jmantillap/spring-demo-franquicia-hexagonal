@@ -8,9 +8,9 @@ import work.javiermantilla.franquicia.domain.model.Franquicia;
 
 
 public interface FranquiciaRepositoryPortOut {
-	List<Franquicia> findAll();
-	Franquicia save(Franquicia franquicia);
-	Optional<Franquicia> findById(Integer id);
-	Franquicia getNombreRepetido(Integer id,String nombre);
+	List<Franquicia> franchiseFindAll();
+	Franquicia saveFranchise(Franquicia franquicia);
+	Optional<Franquicia> findByIdFranchise(Integer id);
+	Franquicia getNameRepeated(Integer id,String nombre);
 	
 }

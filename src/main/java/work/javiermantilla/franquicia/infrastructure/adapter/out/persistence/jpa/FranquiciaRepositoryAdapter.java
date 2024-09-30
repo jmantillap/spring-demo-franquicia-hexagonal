@@ -22,20 +22,20 @@ public class FranquiciaRepositoryAdapter implements FranquiciaRepositoryPortOut{
 	private final FranquiciaRepository franquiciaRepository;
 	
 	@Override
-	public List<Franquicia> findAll() {		
+	public List<Franquicia> franchiseFindAll() {		
 		List<FranquiciaEntity> list= this.franquiciaRepository.findAll();		
 		return GenericMapper.mapList(list, Franquicia.class);
 	}
 
 	@Override
-	public Franquicia save(Franquicia franquicia) {
+	public Franquicia saveFranchise(Franquicia franquicia) {
 		FranquiciaEntity franquiciaEntity= this.franquiciaRepository
 				.save(GenericMapper.map(franquicia,FranquiciaEntity.class));
 		return GenericMapper.map(franquiciaEntity, Franquicia.class);
 	}
 
 	@Override
-	public Optional<Franquicia> findById(Integer id) {		
+	public Optional<Franquicia> findByIdFranchise(Integer id) {		
 		Optional<FranquiciaEntity> oFranquicia = this.franquiciaRepository.findById(id);		
 		return oFranquicia.isEmpty() ? 
 				Optional.empty() : 
@@ -43,7 +43,7 @@ public class FranquiciaRepositoryAdapter implements FranquiciaRepositoryPortOut{
 	}
 
 	@Override
-	public Franquicia getNombreRepetido(Integer id, String nombre) {
+	public Franquicia getNameRepeated(Integer id, String nombre) {
 		FranquiciaEntity franquiciaEntity = this.franquiciaRepository.getNombreRepetido(id, nombre);
 		return franquiciaEntity!=null ? GenericMapper.map(franquiciaEntity, Franquicia.class) : null ;
 	}

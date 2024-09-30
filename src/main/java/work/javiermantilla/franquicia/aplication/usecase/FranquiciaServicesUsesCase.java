@@ -31,34 +31,34 @@ public class FranquiciaServicesUsesCase implements FranquiciaUseCasePortIn {
 		franquiciaDTO.setId(null);
 		franquiciaDTO.setEstado(true);		
 		Franquicia franquicia= GenericMapper.map(franquiciaDTO, Franquicia.class);		
-		return this.franquiciaRepositoryPortOut.save(franquicia);
+		return this.franquiciaRepositoryPortOut.saveFranchise(franquicia);
 	}
 
 	@Override
 	public List<Franquicia> getFranquicias() {		
-		return this.franquiciaRepositoryPortOut.findAll();
+		return this.franquiciaRepositoryPortOut.franchiseFindAll();
 	}
 
 	@Override
 	public Franquicia updateFranquicia(Integer id, FranquiciaUpdateRequestDTO dto) {
-		Optional<Franquicia> oFranquicia = this.franquiciaRepositoryPortOut.findById(id);
+		Optional<Franquicia> oFranquicia = this.franquiciaRepositoryPortOut.findByIdFranchise(id);
 		if(!oFranquicia.isPresent()) {
 			log.error("La franquicia con id: {}, no existe.",id);
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"La Franquicia no existe");
 		}
-		if(this.franquiciaRepositoryPortOut.getNombreRepetido(id, dto.getNombre())!=null) {
+		if(this.franquiciaRepositoryPortOut.getNameRepeated(id, dto.getNombre())!=null) {
 			log.error("El nombre: {} ,ya  existe.",dto.getNombre());
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"El nombre de la franquicia ya existe");
 		}
 		oFranquicia.get().setNombre(dto.getNombre());
-		Franquicia franquicia= this.franquiciaRepositoryPortOut.save(oFranquicia.get());
+		Franquicia franquicia= this.franquiciaRepositoryPortOut.saveFranchise(oFranquicia.get());
 		log.info("Se actualizo la franquicia");
 		return franquicia;
 	}
 
 	@Override
 	public Franquicia getFranquiciaById(Integer id) {
-		Optional<Franquicia> oFranquicia = this.franquiciaRepositoryPortOut.findById(id);
+		Optional<Franquicia> oFranquicia = this.franquiciaRepositoryPortOut.findByIdFranchise(id);
 		if(!oFranquicia.isPresent()) {
 			log.error("La franquicia con id: {}, no existe.",id);
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"La Franquicia no existe");
