@@ -12,12 +12,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "work.javiermantilla.franquicia.infrastructure.database.repository")
+    basePackages = "work.javiermantilla.franquicia.infrastructure.adapter.out.persistence.jpa.repository")
 @Slf4j
 @NoArgsConstructor
 @Data
 @EnableJpaAuditing
-@EntityScan(basePackages = "work.javiermantilla.franquicia.infrastructure.database.entity")
+@EntityScan(basePackages = "work.javiermantilla.franquicia.infrastructure.adapter.out.persistence.jpa.entity")
 public class SpringDataConfig {
 
 }
