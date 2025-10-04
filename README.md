@@ -1,4 +1,4 @@
-# PENDIENTE DOCUMENTACION
+# DOCUMENTACIÓN
 
 ## Diagrama de referencia
  
