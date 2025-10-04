@@ -1,0 +1,54 @@
+# First stage, build the custom JRE
+FROM openjdk:17-jdk-slim AS jre-builder
+
+#LABEL org.opencontainers.image.authors="jmantillap@gmail.com"
+
+# Install binutils, required by jlink
+RUN apt-get update -y &&  \
+    apt-get install -y binutils
+
+# Build small JRE image
+RUN $JAVA_HOME/bin/jlink \
+         --verbose \
+         --add-modules java.base,java.compiler,java.desktop,java.instrument,java.management,java.naming,java.net.http,java.prefs,java.rmi,java.scripting,java.security.jgss,java.sql,jdk.jfr,jdk.unsupported \
+         --strip-debug \
+         --no-man-pages \
+         --no-header-files \
+         --compress=2 \
+         --output /optimized-jdk-17
+
+# Second stage, Use the custom JRE and build the app image
+FROM alpine:latest
+ENV JAVA_HOME=/opt/optimized-jdk-17
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+# copy JRE from the base image
+COPY --from=jre-builder /optimized-jdk-17 /opt/optimized-jdk-17
+
+# Add app user
+ARG APPLICATION_USER=spring
+
+# Create a user to run the application, don't run as root
+RUN addgroup --system $APPLICATION_USER &&  adduser --system $APPLICATION_USER --ingroup $APPLICATION_USER
+
+# Create the application directory
+RUN mkdir /app && chown -R $APPLICATION_USER /app
+
+ENV JDBC_URL_BD=jdbc:mysql://host.docker.internal:3306/franquicia
+ENV USERNAME_BD=root
+ENV PASSWORD_BD=root
+
+COPY --chown=$APPLICATION_USER:$APPLICATION_USER ./target/demo-franquicia-hexagonal-1.0.jar /app/app.jar
+
+WORKDIR /app
+
+USER $APPLICATION_USER
+
+EXPOSE 8080
+ENTRYPOINT [ "java", "-jar", "/app/app.jar" ]
+
+#$ docker build -t jmantillap/franquicia-hexagonal:v1 .
+#$ docker run -it --name franquicia-contenedor-app -p 8080:8080 <identificadorImagen>
+
+#creacion del contenedor y que lo elimine cuando se detenga el contenedor
+#$ docker build -t jmantillap/franquicia-hexagonal:v1 .
+#$ docker run -it --rm --name franquicia-hexagonal-app -p 8080:8080 <identificadorImagen>
